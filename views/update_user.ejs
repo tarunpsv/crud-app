@@ -1,0 +1,86 @@
+
+<!-- include Header-->
+<%- include('include/_header')%>
+<!-- /include Header-->
+
+    <!-- Main Site-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> All Students</a>
+                </div>
+            </div>
+
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update Student Information</h2>
+                <span class="text-light">Use the below form to update the Information</span>
+            </div>
+
+            <!-- Form Handling-->
+            <form method="POST" id="update_user">
+                <div class="new_user">
+            
+                    <div class="form-group">
+                        <label for="name" class="text-light">Name</label>
+                        <input type="hidden" class="id" name="id" value="<%= user._id %>">
+                        <input type="text" name="name" value="<%= user.name %>" placeholder="Venkata Giridhar">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Email</label>
+                        <input type="text" name="email" value="<%= user.email %>" placeholder="venkatagiri@gmail.com">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="contact" class="text-light">Contact</label>
+                        <input type="text" name="contact" value="<%= user.contact %>" placeholder="9876543210">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="gender" class="text-light">Gender</label>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-a" name="gender" value="Male"<%= user.gender == 'Male'?'checked':'' %>>
+                            <label for="radio-a" class="radio-label">Male</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-b" name="gender" value="Female"<%= user.gender == 'Female'?'checked':'' %>>
+                            <label for="radio-b" class="radio-label">Female</label>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="branch" class="text-light">Branch</label>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-c" name="branch" value="CSE"<%= user.branch == 'CSE'?'checked':'' %>>
+                            <label for="radio-c" class="radio-label">CSE</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-d" name="branch" value="IT"<%= user.branch == 'IT'?'checked':'' %>>
+                            <label for="radio-d" class="radio-label">IT</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-e" name="branch" value="Mech"<%= user.branch == 'Mech'?'checked':'' %>>
+                            <label for="radio-e" class="radio-label">Mech</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" id="radio-f" name="branch" value="Electrical"<%= user.branch == 'Electrical'?'checked':'' %>>
+                            <label for="radio-f" class="radio-label">Electrical</label>
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+            
+                </div>   
+            </form>
+            <!-- /Form Handling-->
+
+        </div>
+    </main>
+<!-- /Main Site-->
+
+<!-- include Footer-->
+<%- include('include/_footer')%>
+<!-- /include Footer-->

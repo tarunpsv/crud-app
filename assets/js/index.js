@@ -1,4 +1,4 @@
-const port = process.env.PORT || 3000;
+
 
 $("#add_user").submit(function(event){
     alert("Data Inserted Succesfully");    
@@ -14,10 +14,10 @@ $("#update_user").submit(function(event){
         data[n['name']] = n['value']
     })
 
-    //console.log(unindexed_array);
+    console.log(data.port);
 
     var request = {
-        "url" : `http://localhost:${port}/api/users/${data.id}`,
+        "url" : `http://localhost:${data.port}/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -32,6 +32,10 @@ if(window.location.pathname=="/"){
     $ondelete = $(".table tbody td a.delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
+        var port = $(this).attr("name")
+
+        console.log(port);
+
 
         var request = {
             "url" : `http://localhost:${port}/api/users/${id}`,
